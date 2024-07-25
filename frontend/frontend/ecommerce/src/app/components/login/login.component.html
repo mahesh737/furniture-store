@@ -1,0 +1,65 @@
+<!--  Error: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler] 
+              Add in App.module
+              FormsModule,
+              ReactiveFormsModule-->
+<div   class="container mt-3" style="background-image: url(https://img.freepik.com/free-photo/soft-watercolor_1048-4774.jpg?t=st=1721882833~exp=1721886433~hmac=9d7cc6a5b56cd5396a053796690ea41091a6c06a5f44c2552161250fa54ef135&w=740);">
+  <div class="row justify-content-center" >
+    <div class="col-6">
+      <form [formGroup]="customerFormGroup" (ngSubmit)="onSubmit()">
+        <div formGroupName="customer" style="margin-top: 20%;"> 
+          <h3>Login</h3>
+          <hr />
+
+          <!-- Email Name -->
+          <div class="my-3">
+            <label class="form-label">Email*:</label>
+            <input type="text" class="form-control" formControlName="email" />
+            <div
+              *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="email?.errors?.['required']"> Email is required</div>
+            </div>
+          </div>
+
+          <!-- Password Name -->
+          <div class="my-3">
+            <label class="form-label">Password*:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="password"
+            />
+            <div
+              *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="password.errors?.['required']">
+                Password is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="float:left">
+          <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+        <div style="float:right">
+            New Customer?
+            <a routerLink="/register" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+  <h6>.</h6>
+
+  
+</div>
